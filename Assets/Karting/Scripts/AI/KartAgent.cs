@@ -239,24 +239,31 @@ namespace KartGame.AI
             sensor.AddObservation(m_Acceleration);
         }
 
-        public override void OnActionReceived(float[] vectorAction)
+        public override void Initialize()
         {
-            base.OnActionReceived(vectorAction);
-            InterpretDiscreteActions(vectorAction);
 
-            // Find the next checkpoint when registering the current checkpoint that the agent has passed.
-            var next = (m_CheckpointIndex + 1) % Colliders.Length;
-            var nextCollider = Colliders[next];
-            var direction = (nextCollider.transform.position - m_Kart.transform.position).normalized;
-            var reward = Vector3.Dot(m_Kart.Rigidbody.velocity.normalized, direction);
-
-            if (ShowRaycasts) Debug.DrawRay(AgentSensorTransform.position, m_Kart.Rigidbody.velocity, Color.blue);
-
-            // Add rewards if the agent is heading in the right direction
-            AddReward(reward * TowardsCheckpointReward);
-            AddReward((m_Acceleration && !m_Brake ? 1.0f : 0.0f) * AccelerationReward);
-            AddReward(m_Kart.LocalSpeed() * SpeedReward);
         }
+
+        //todo: commented due to API mismatch
+
+        //public override void OnActionReceived(float[] vectorAction)
+        //{
+        //    base.OnActionReceived(vectorAction);
+        //    InterpretDiscreteActions(vectorAction);
+
+        //    // Find the next checkpoint when registering the current checkpoint that the agent has passed.
+        //    var next = (m_CheckpointIndex + 1) % Colliders.Length;
+        //    var nextCollider = Colliders[next];
+        //    var direction = (nextCollider.transform.position - m_Kart.transform.position).normalized;
+        //    var reward = Vector3.Dot(m_Kart.Rigidbody.velocity.normalized, direction);
+
+        //    if (ShowRaycasts) Debug.DrawRay(AgentSensorTransform.position, m_Kart.Rigidbody.velocity, Color.blue);
+
+        //    // Add rewards if the agent is heading in the right direction
+        //    AddReward(reward * TowardsCheckpointReward);
+        //    AddReward((m_Acceleration && !m_Brake ? 1.0f : 0.0f) * AccelerationReward);
+        //    AddReward(m_Kart.LocalSpeed() * SpeedReward);
+        //}
 
         public override void OnEpisodeBegin()
         {
