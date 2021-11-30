@@ -9,7 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Hill
   m_Shader: {fileID: 4800000, guid: bee44b4a58655ee4cbff107302a3e131, type: 3}
-  m_ShaderKeywords: DR_OUTLINE_ON DR_RIM_ON _CELPRIMARYMODE_SINGLE _TEXTUREBLENDINGMODE_MULTIPLY
+  m_ShaderKeywords: DR_OUTLINE_ON DR_RIM_ON DR_SPECULAR_ON _CELPRIMARYMODE_SINGLE
+    _TEXTUREBLENDINGMODE_MULTIPLY
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -105,7 +106,7 @@ Material:
     - _FlatRimLightAlign: 0
     - _FlatRimSize: 0.5
     - _FlatSpecularEdgeSmoothness: 0
-    - _FlatSpecularSize: 0.304
+    - _FlatSpecularSize: 0.641
     - _Flatness: 1
     - _FlatnessExtra: 1
     - _GlossMapScale: 1
@@ -118,8 +119,8 @@ Material:
     - _GradientSize: 10
     - _LightContribution: 0
     - _LightFalloffSize: 0
-    - _LightmapDirectionPitch: 0
-    - _LightmapDirectionYaw: 0
+    - _LightmapDirectionPitch: 64
+    - _LightmapDirectionYaw: 12
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -138,7 +139,7 @@ Material:
     - _ShadowEdgeSizeExtra: 0.05
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
-    - _SpecularEnabled: 0
+    - _SpecularEnabled: 1
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
@@ -162,8 +163,8 @@ Material:
     - _ColorGradient: {r: 0.85023, g: 0.85034, b: 0.85045, a: 0.85056}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FlatRimColor: {r: 0.2830189, g: 0.26307097, b: 0.254984, a: 1}
-    - _FlatSpecularColor: {r: 0.49056602, g: 0.21230865, b: 0.0995016, a: 1}
-    - _LightmapDirection: {r: 0, g: 1, b: 0, a: 0}
+    - _FlatSpecularColor: {r: 0.7924528, g: 0.4023193, b: 0.24296904, a: 1}
+    - _LightmapDirection: {r: 0.1868698, g: 0.43837115, b: 0.87915325, a: 0}
     - _OutlineColor: {r: 0.8313726, g: 0.3254902, b: 0.121568635, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _UnityShadowColor: {r: 0.85023, g: 0.85034, b: 0.85045, a: 0.85056}
