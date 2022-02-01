@@ -10,8 +10,9 @@ namespace KartGame.KartSystems
         [Tooltip("Damage that ammo deals to an object.")]
         public int damage;
         Transform launcher;
-        Vector3 target;
+        public Vector3 target;
         Collider collider;
+
 
 
         private void OnCollisionEnter(Collision collision)
@@ -26,7 +27,7 @@ namespace KartGame.KartSystems
         {
             launcher = t;
         }
-        void setTarget(Vector3 t)
+        public void setTarget(Vector3 t)
         {
             target = t;
         }
